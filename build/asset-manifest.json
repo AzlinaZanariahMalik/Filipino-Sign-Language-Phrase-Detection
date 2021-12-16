@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.394503f2.chunk.css",
-    "main.js": "/static/js/main.f7672717.chunk.js",
+    "main.js": "/static/js/main.bb3db3b1.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.41b307b2.js",
     "static/css/2.a1e3eec8.chunk.css": "/static/css/2.a1e3eec8.chunk.css",
-    "static/js/2.e434bf2e.chunk.js": "/static/js/2.e434bf2e.chunk.js",
+    "static/js/2.b9e5a255.chunk.js": "/static/js/2.b9e5a255.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.3475a6b91d4d80da38d7a02168cd6835.js": "/precache-manifest.3475a6b91d4d80da38d7a02168cd6835.js",
+    "precache-manifest.01044ed692809bfb174013b6f79e1ed1.js": "/precache-manifest.01044ed692809bfb174013b6f79e1ed1.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.e434bf2e.chunk.js.LICENSE.txt": "/static/js/2.e434bf2e.chunk.js.LICENSE.txt",
+    "static/js/2.b9e5a255.chunk.js.LICENSE.txt": "/static/js/2.b9e5a255.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/bg-hero.f578583b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.41b307b2.js",
     "static/css/2.a1e3eec8.chunk.css",
-    "static/js/2.e434bf2e.chunk.js",
+    "static/js/2.b9e5a255.chunk.js",
     "static/css/main.394503f2.chunk.css",
-    "static/js/main.f7672717.chunk.js"
+    "static/js/main.bb3db3b1.chunk.js"
   ]
 }
