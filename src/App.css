@@ -220,8 +220,33 @@ p {
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
-
-
+.mainBlock .toasterbutton {
+  
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  margin-top:1rem ;
+  margin-bottom: 0rem;
+}
+.mainBlock .toasterbutton button{
+  width: 150px;
+  background: #b90e0a;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 5px 5px;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  
+}
+.mainBlock .toasterbutton button:hover{
+  background: tomato;
+  color: white;
+ 
+}
 
 /* block*/
 .block {

@@ -17,6 +17,7 @@
     "react-dom": "^16.13.1",
     "react-magic-dropzone": "^1.0.1",
     "react-scripts": "3.4.3",
+    "react-toastify": "^8.1.0",
     "react-webcam": "^5.2.0"
   },
   "scripts": {

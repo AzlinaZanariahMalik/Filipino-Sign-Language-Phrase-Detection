@@ -3,9 +3,11 @@ import React, { useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import {loadGraphModel} from "@tensorflow/tfjs-converter";
 import Webcam from "react-webcam";
-//import {drawRect} from "./model";
-
+import { message } from 'antd';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 tf.setBackend('webgl');
+toast.configure();
 
 //Classes: label
 const labelMap = {
@@ -21,8 +23,8 @@ const labelMap = {
   10:{name:'Hindi', color:'yellow'},
   11:{name:'Hintay', color:'white'},
   12:{name:'Ikinagagalak', color:'red'},
-  13:{name:'Kamusta', color:'blue'},
-  14:{name:'Ka o Mo o Ikaw', color:'yellow'},
+  13:{name:'Ka o Mo o Ikaw', color:'blue'},
+  14:{name:'Kamusta', color:'yellow'},
   15:{name:'Mabagal', color:'white'},
   16:{name:'Magandang', color:'red'},
   17:{name:'Magkita', color:'blue'},
@@ -41,7 +43,7 @@ const labelMap = {
   30:{name:'Tayo', color:'yellow'},
   31:{name:'Umaga', color:'white'},
   32:{name:'Walang anuman', color:'red'},
-
+ 
 }
 
 //Tensorflowjs Library and react drawRect
@@ -70,7 +72,18 @@ export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight,
 }
 
 //tensorflowjs library and Computer Vision API
-function AppMain() {
+function AppMain() { 
+  
+  const notify = () => toast("Fetching & preparing the Model for 2 minutes. Once done, show the palm and fold the middle and ring finger downwards ,a distance of half meter infront of the webcam. detection time is around 3-5 seconds.(Mobile Version is not fully supported.)", {
+    position: toast.POSITION.TOP_CENTER,
+    autoClose: 120000,
+	pauseOnHover: false,
+	draggable:false,
+	closeButton:false,
+	closeOnClick: false
+	});
+ 
+
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -81,14 +94,13 @@ function AppMain() {
     const fslmodel = await tf.loadGraphModel('https://capstonetfjstestmodel.s3.jp-tok.cloud-object-storage.appdomain.cloud/model.json')
     
 
-  
     setInterval(() => {
       detect(fslmodel);
     }, 3000); //3 second detection with average of 20 seconds of loading model but we deduce that the converted model is the problem 
   };
 
   const detect = async (fslmodel) => {
-    tf.engine().startScope();
+    //tf.engine().startScope();
     // data
     if (
       typeof webcamRef.current !== "undefined" &&
@@ -119,9 +131,9 @@ function AppMain() {
       console.log(obj)
 
       //Identify the Object Array Number from the model
-      const boxes = await obj[6].array()
-      const classes = await obj[7].array()
-      const scores = await obj[5].array()
+      const boxes = await obj[0].array()
+      const classes = await obj[5].array()
+      const scores = await obj[1].array()
 
       
       // Draw 
@@ -146,17 +158,24 @@ function AppMain() {
       tf.dispose(obj)
 
     }
-    //await tf.nextFrame()
-    tf.engine().endScope();
+    //tf.engine().endScope();
   };
 
   useEffect(()=>{runModel()},[]);
   return (
     <div id="main" className="mainBlock">
+      <div className="toasterbutton">
+        <h1>CLICK ME</h1>
+      
+     <button onClick={notify}>Load Model</button>
+   
+     <ToastContainer />
+    </div>
 		<div id="caption"></div>
             <header className="container-fluid">
-                <Webcam
+                <Webcam 
                 ref={webcamRef}
+
                 audio={false}
                 muted={true} 
                 style={{
@@ -173,9 +192,6 @@ function AppMain() {
                  }}
           
                  />
-
-                // <div id="caption"></div>
-
 
                 <canvas
                   ref={canvasRef}

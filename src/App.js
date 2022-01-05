@@ -5,9 +5,12 @@ import 'antd/dist/antd.css';
 import AppHeader from './components/common/header';
 import AppFooter from './components/common/footer';
 import AppHome from './views/home';
+//import AppNotify from './Notify.js';
+
 
 import { Layout } from 'antd';
 const { Header, Content, Footer } = Layout;
+
 
 function App() {
   return (
