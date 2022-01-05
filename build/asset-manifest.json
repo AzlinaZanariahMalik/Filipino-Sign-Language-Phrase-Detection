@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.b39f12cc.chunk.css",
-    "main.js": "/static/js/main.9ae4db5c.chunk.js",
+    "main.js": "/static/js/main.cf3d0572.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.41b307b2.js",
     "static/css/2.27c00c95.chunk.css": "/static/css/2.27c00c95.chunk.css",
-    "static/js/2.4501677b.chunk.js": "/static/js/2.4501677b.chunk.js",
+    "static/js/2.85be1221.chunk.js": "/static/js/2.85be1221.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.8d0dcdd1e3a7ae04510087e6df9696ed.js": "/precache-manifest.8d0dcdd1e3a7ae04510087e6df9696ed.js",
+    "precache-manifest.facaf8622fba0e92cf8a0b02ea856426.js": "/precache-manifest.facaf8622fba0e92cf8a0b02ea856426.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.4501677b.chunk.js.LICENSE.txt": "/static/js/2.4501677b.chunk.js.LICENSE.txt",
+    "static/js/2.85be1221.chunk.js.LICENSE.txt": "/static/js/2.85be1221.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/bg-hero.f578583b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.41b307b2.js",
     "static/css/2.27c00c95.chunk.css",
-    "static/js/2.4501677b.chunk.js",
+    "static/js/2.85be1221.chunk.js",
     "static/css/main.b39f12cc.chunk.css",
-    "static/js/main.9ae4db5c.chunk.js"
+    "static/js/main.cf3d0572.chunk.js"
   ]
 }

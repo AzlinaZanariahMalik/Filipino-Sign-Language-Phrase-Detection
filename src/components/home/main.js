@@ -4,10 +4,10 @@ import * as tf from "@tensorflow/tfjs";
 import {loadGraphModel} from "@tensorflow/tfjs-converter";
 import Webcam from "react-webcam";
 import { message } from 'antd';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+//import { toast, ToastContainer } from 'react-toastify';
+//import 'react-toastify/dist/ReactToastify.css';
 tf.setBackend('webgl');
-toast.configure();
+//toast.configure();
 
 //Classes: label
 const labelMap = {
@@ -74,14 +74,14 @@ export const drawRect = (boxes, classes, scores, threshold, imgWidth, imgHeight,
 //tensorflowjs library and Computer Vision API
 function AppMain() { 
   
-  const notify = () => toast("Fetching & preparing the Model for 2 minutes. Once done, show the palm and fold the middle and ring finger downwards ,a distance of half meter infront of the webcam. detection time is around 3-5 seconds.(Mobile Version is not fully supported.)", {
-    position: toast.POSITION.TOP_CENTER,
-    autoClose: 120000,
-	pauseOnHover: false,
-	draggable:false,
-	closeButton:false,
-	closeOnClick: false
-	});
+  //const notify = () => toast("Fetching & preparing the Model for 2 minutes. Once done, show the palm and fold the middle and ring finger downwards ,a distance of half meter infront of the webcam. detection time is around 3-5 seconds.(Mobile Version is not fully supported.)", {
+  //  position: toast.POSITION.TOP_CENTER,
+  //  autoClose: 120000,
+	//  pauseOnHover: false,
+	//  draggable:false,
+	//  closeButton:false,
+	//  closeOnClick: false
+	//});
  
 
   const webcamRef = useRef(null);
@@ -164,13 +164,6 @@ function AppMain() {
   useEffect(()=>{runModel()},[]);
   return (
     <div id="main" className="mainBlock">
-      <div className="toasterbutton">
-        <h1>CLICK ME</h1>
-      
-     <button onClick={notify}>Load Model</button>
-   
-     <ToastContainer />
-    </div>
 		<div id="caption"></div>
             <header className="container-fluid">
                 <Webcam 
