@@ -16,14 +16,45 @@ const { Header, Content, Footer } = Layout;
 
 
 function App() {
-  const notify = () => toast("Fetching & Loading the Model for 2 minutes. Once done, show the palm and fold the middle and ring finger downwards ,a distance of half meter infront of the webcam. detection time is around 3-5 seconds.(Mobile Version is not fully supported.)", {
+  
+
+    const clearWaitingQueue = () => {
+      toast.clearWaitingQueue();
+    }
+    const notify = () => toast("Fetching & Loading the Model for 2 minutes Please wait. Once done loading, position the signer within a distance of half meter infront of the webcam.(Mobile Version is not fully supported.)", {
     position: toast.POSITION.TOP_CENTER,
     autoClose: 120000,
 	  pauseOnHover: false,
 	  draggable:false,
 	  closeButton:false,
-	  closeOnClick: false
+	  closeOnClick: false,
+    onClose: toastdetection
+
 	});
+
+
+  const toastdetection = () => toast.success('Show the palm and fold the middle and ring finger downwards , wait for 3-5 seconds.', {
+    position: toast.POSITION.TOP_CENTER,
+    autoClose: 7000,
+    pauseOnHover: false,
+    draggable: false,
+    closeButton: false,
+    closeOnClick: false,
+    onClose:toastdetect
+  });
+
+  const toastdetect = () => toast.info('For every detection, count for 3-5 seconds. If there still no detection change the angle or position of the gesture and if it still persist the shape of the gesture is hard to recognize.', {
+    position: toast.POSITION.TOP_CENTER,
+    autoClose: false,
+    pauseOnHover: false,
+    draggable: false,
+    closeButton: true,
+    closeOnClick: true,
+    //toastId: detect
+  });
+ 
+ 
+  
   useEffect(()=>{notify()},[]);
   return (
   
@@ -33,7 +64,6 @@ function App() {
       </Header>
       <Content>
         <AppHome/>
-        <ToastContainer />
       </Content>
       <Footer>
         <AppFooter/>  
